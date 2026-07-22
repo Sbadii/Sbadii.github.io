@@ -102,6 +102,14 @@
             background: #9b59b6;
         }
 
+        h2.nlp-title {
+            color: #e67e22;
+        }
+
+        h2.nlp-title::after {
+            background: #e67e22;
+        }
+
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -129,6 +137,7 @@
         .project-card.cookshare { border-left-color: #2ecc71; }
         .project-card.hotel { border-left-color: #f39c12; }
         .project-card.dl { border-left-color: #9b59b6; }
+        .project-card.nlp { border-left-color: #e67e22; }
 
         .project-title {
             font-size: 1.4em;
@@ -149,6 +158,10 @@
 
         .project-card.dl .project-role {
             background: #9b59b6;
+        }
+
+        .project-card.nlp .project-role {
+            background: #e67e22;
         }
 
         .project-desc {
@@ -188,6 +201,10 @@
             background: #9b59b6;
         }
 
+        .project-card.nlp .project-link {
+            background: #e67e22;
+        }
+
         .project-link:hover {
             background: #5568d3;
             transform: translateX(5px);
@@ -195,6 +212,10 @@
 
         .project-card.dl .project-link:hover {
             background: #8e44ad;
+        }
+
+        .project-card.nlp .project-link:hover {
+            background: #d35400;
         }
 
         .collaborators {
@@ -242,7 +263,7 @@
             <div class="contact">
                 <a href="mailto:sihambadii042@gmail.com">📧 Email</a>
                 <a href="https://www.linkedin.com/in/badii-siham-836960183/" target="_blank">🔗 LinkedIn</a>
-                <a href="https://github.com/Sbadii" target="_blank">🐱 GitHub</a>
+                <a href="https://github.com/Sbadii" target="_blank"> GitHub</a>
             </div>
         </header>
 
@@ -294,7 +315,7 @@
                         <span class="tech-tag">Spring Security</span>
                     </div>
                     <a href="https://github.com/Sbadii/CookShare" class="project-link" target="_blank">
-                        📂 Voir le dépôt
+                         Voir le dépôt
                     </a>
                 </div>
 
@@ -323,6 +344,41 @@
             </div>
         </section>
 
+        <!-- Section Projets de NLP & LLM -->
+        <section class="section" style="background-color: #fcfcfc; border-top: 1px solid #eee;">
+            <h2 class="nlp-title">Mes Projets de NLP & Traitement du Langage</h2>
+            <div class="projects-grid">
+                
+                <!-- Projet Skip-Gram -->
+                <div class="project-card nlp">
+                    <h3 class="project-title">📊 Skip-Gram pour l'Arabe Économique</h3>
+                    <span class="project-role">Ingénieure NLP & Data Engineer</span>
+                    <p class="project-desc">
+                        Développement d'un modèle Skip-Gram (Word2Vec) from scratch pour l'analyse sémantique de corpus économiques arabes. Collecte de données via web scraping (Al Jazeera, Al Arabiya), prétraitement NLP avancé pour l'arabe, et visualisation 3D interactive des embeddings.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Skip-Gram / Word2Vec</span>
+                        <span class="tech-tag">Negative Sampling (SGNS)</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">NLP Arabe</span>
+                        <span class="tech-tag">Crawlee / Apify</span>
+                        <span class="tech-tag">Playwright</span>
+                        <span class="tech-tag">Visualisation 3D</span>
+                        <span class="tech-tag">Web Scraping</span>
+                        <span class="tech-tag">Embeddings</span>
+                    </div>
+                    <a href="https://github.com/Sbadii/skip-gram" class="project-link" target="_blank">
+                        📂 Voir le dépôt GitHub
+                    </a>
+                    <p class="collaborators">
+                        <strong>Collaboration avec :</strong> Amraqui Imad Eddine<br>
+                        <strong>Encadrement :</strong> Pr. A. Mazroui
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
         <!-- Section Projets de Deep Learning & IA -->
         <section class="section" style="background-color: #fcfcfc; border-top: 1px solid #eee;">
             <h2 class="dl-title">Mes Projets de Deep Learning & IA</h2>
@@ -341,7 +397,7 @@
                         <span class="tech-tag">Edge-Aware Attention</span>
                         <span class="tech-tag">ASPP</span>
                         <span class="tech-tag">U-Net</span>
-                        <span class="tech-tag">Dataset BRISC 2025 :)</span>
+                        <span class="tech-tag">Dataset BRISC 2025</span>
                         <span class="tech-tag">Dice Score : 0.8734</span>
                     </div>
                     <a href="https://www.kaggle.com/code/sihambadii/notebook981a691f9e" class="project-link" target="_blank">
@@ -351,7 +407,7 @@
 
                 <!-- Projet 5 : Classification des Tumeurs Cérébrales -->
                 <div class="project-card dl">
-                    <h3 class="project-title">🩺 Classification des Tumeurs Cérébrales</h3>
+                    <h3 class="project-title"> Classification des Tumeurs Cérébrales</h3>
                     <span class="project-role">Ingénieure R&D en Deep Learning</span>
                     <p class="project-desc">
                         Conception d'un modèle de classification d'images IRM pour identifier 4 catégories : Gliome, Méningiome, Pas de tumeur et Hypophysaire. Utilisation d'une fonction de perte adaptée pour optimiser la détection des classes minoritaires.
