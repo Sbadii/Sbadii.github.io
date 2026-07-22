@@ -79,6 +79,7 @@
             text-align: center;
             position: relative;
             display: inline-block;
+            width: 100%;
         }
 
         h2::after {
@@ -93,9 +94,17 @@
             border-radius: 3px;
         }
 
+        h2.dl-title {
+            color: #9b59b6;
+        }
+
+        h2.dl-title::after {
+            background: #9b59b6;
+        }
+
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 30px;
             margin-top: 30px;
         }
@@ -107,6 +116,8 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             transition: all 0.3s;
             border-left: 4px solid #667eea;
+            display: flex;
+            flex-direction: column;
         }
 
         .project-card:hover {
@@ -114,16 +125,13 @@
             box-shadow: 0 8px 25px rgba(0,0,0,0.15);
         }
 
-        .project-card.clinique {
-            border-left-color: #e74c3c;
-        }
-
-        .project-card.cookshare {
-            border-left-color: #2ecc71;
-        }
+        .project-card.clinique { border-left-color: #e74c3c; }
+        .project-card.cookshare { border-left-color: #2ecc71; }
+        .project-card.hotel { border-left-color: #f39c12; }
+        .project-card.dl { border-left-color: #9b59b6; }
 
         .project-title {
-            font-size: 1.5em;
+            font-size: 1.4em;
             margin-bottom: 10px;
             color: #2c3e50;
         }
@@ -133,14 +141,20 @@
             color: white;
             padding: 5px 12px;
             border-radius: 15px;
-            font-size: 0.9em;
+            font-size: 0.85em;
             display: inline-block;
             margin-bottom: 15px;
+            width: fit-content;
+        }
+
+        .project-card.dl .project-role {
+            background: #9b59b6;
         }
 
         .project-desc {
             margin-bottom: 15px;
             color: #555;
+            flex-grow: 1;
         }
 
         .project-tech {
@@ -167,11 +181,20 @@
             border-radius: 25px;
             font-weight: 600;
             transition: all 0.3s;
+            text-align: center;
+        }
+
+        .project-card.dl .project-link {
+            background: #9b59b6;
         }
 
         .project-link:hover {
             background: #5568d3;
             transform: translateX(5px);
+        }
+
+        .project-card.dl .project-link:hover {
+            background: #8e44ad;
         }
 
         .collaborators {
@@ -215,22 +238,23 @@
     <div class="container">
         <header>
             <h1>Siham Badii</h1>
-            <p class="subtitle">étudiante Master d’ingénierie informatique -UMP - FSO| R&D Engineer | ORACLE Certified | Spring Boot | React JS | fullstack développement [ Web développement | DevOps</p>
+            <p class="subtitle">Étudiante en Master d'ingénierie informatique - UMP FSO | R&D Engineer | ORACLE Certified | Spring Boot | React JS | Fullstack Développement (Web & DevOps)</p>
             <div class="contact">
                 <a href="mailto:sihambadii042@gmail.com">📧 Email</a>
-                <a href="https://www.linkedin.com/in/badii-siham-836960183/">🔗 LinkedIn</a>
-                <a href="https://github.com/Sbadii">🐱 GitHub</a>
+                <a href="https://www.linkedin.com/in/badii-siham-836960183/" target="_blank">🔗 LinkedIn</a>
+                <a href="https://github.com/Sbadii" target="_blank">🐱 GitHub</a>
             </div>
         </header>
 
+        <!-- Section Projets de Développement -->
         <section class="section">
-            <h2>Mes Projets</h2>
+            <h2>Mes Projets de Développement</h2>
             <div class="projects-grid">
                 
                 <!-- Projet 1 : Clinique App -->
                 <div class="project-card clinique">
                     <h3 class="project-title">🏥 Clinique App</h3>
-                    <span class="project-role">Développeuse Backend - Spring Boot - React - outils DevOps</span>
+                    <span class="project-role">Développeuse Backend & DevOps</span>
                     <p class="project-desc">
                         Application de gestion de clinique médicale avec prise de rendez-vous en ligne, gestion des patients et historique médical.
                     </p>
@@ -238,12 +262,12 @@
                         <span class="tech-tag">Spring Boot</span>
                         <span class="tech-tag">Spring Data JPA</span>
                         <span class="tech-tag">React</span>
-                        <span class="tech-tag">MySQL PostgreSQL</span>
+                        <span class="tech-tag">MySQL / PostgreSQL</span>
                         <span class="tech-tag">REST API</span>
-                        <span class="tech-tag">Testes Unitaires</span>
+                        <span class="tech-tag">Tests Unitaires</span>
                         <span class="tech-tag">Terraform</span>
-                        <span class="tech-tag">Liquibase data base versionnement</span>
-                        <span class="tech-tag">Github Actions pipline CI/CD</span>
+                        <span class="tech-tag">Liquibase</span>
+                        <span class="tech-tag">GitHub Actions CI/CD</span>
                         <span class="tech-tag">Jira</span>
                     </div>
                     <a href="https://github.com/SoukainaSousou/clinique_app" class="project-link" target="_blank">
@@ -262,7 +286,7 @@
                         Plateforme de partage de recettes culinaires permettant aux utilisateurs de publier, découvrir et sauvegarder des recettes.
                     </p>
                     <div class="project-tech">
-                        <span class="tech-tag">React Next JS </span>
+                        <span class="tech-tag">React / Next.js</span>
                         <span class="tech-tag">MySQL</span>
                         <span class="tech-tag">API REST (JSON)</span>
                         <span class="tech-tag">Spring Data JPA</span>
@@ -272,33 +296,58 @@
                     <a href="https://github.com/Sbadii/CookShare" class="project-link" target="_blank">
                         📂 Voir le dépôt
                     </a>
-                    
                 </div>
 
-                
-                <div class="project-card">
-                    <h3 class="project-title">Réservation d'hotel</h3>
+                <!-- Projet 3 : Réservation d'hôtel -->
+                <div class="project-card hotel">
+                    <h3 class="project-title">🏨 Réservation d'Hôtel</h3>
                     <span class="project-role">Développeuse Full-Stack</span>
                     <p class="project-desc">
-                        application web de reservations des chambre dans un hotel avec paiement et confirmation par email
+                        Application web de réservation de chambres d'hôtel avec système de paiement en ligne et confirmation automatique par email.
                     </p>
                     <div class="project-tech">
-                        <span class="tech-tag">java -spring boot</span>
+                        <span class="tech-tag">Java / Spring Boot</span>
                         <span class="tech-tag">Thymeleaf</span>
                         <span class="tech-tag">Spring MVC</span>
                         <span class="tech-tag">Spring Data JPA</span>
                         <span class="tech-tag">Hibernate ORM</span>
-                        <span class="tech-tag">Spring Mail , JavaMail Sender + SMTP</span>
-                        <span class="tech-tag">Stripe Java SDK , Stripe API(Intégration du paiement en ligne)</span>
-                        <span class="tech-tag">Mysql</span>
-                        <span class="tech-tag">Bootstrap ,HTML ,CSS </span>
+                        <span class="tech-tag">Spring Mail (SMTP)</span>
+                        <span class="tech-tag">Stripe API</span>
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">Bootstrap / HTML / CSS</span>
                     </div>
                     <a href="https://github.com/Sbadii/reservation_hotel" class="project-link" target="_blank">
                         📂 Voir le dépôt
                     </a>
-                    
                 </div>
-            
+            </div>
+        </section>
+
+        <!-- Section Projets de Deep Learning & IA -->
+        <section class="section" style="background-color: #fcfcfc; border-top: 1px solid #eee;">
+            <h2 class="dl-title">Mes Projets de Deep Learning & IA</h2>
+            <div class="projects-grid">
+                
+                <!-- Projet 4 : Segmentation des Tumeurs Cérébrales -->
+                <div class="project-card dl">
+                    <h3 class="project-title">🧠 Segmentation des Tumeurs Cérébrales</h3>
+                    <span class="project-role">Ingénieure R&D en Deep Learning</span>
+                    <p class="project-desc">
+                        Développement d'un modèle avancé de segmentation d'images médicales pour la détection de tumeurs cérébrales. L'architecture hybride proposée atteint d'excellentes performances de précision.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">HYBRID-ATTN-UNET</span>
+                        <span class="tech-tag">CNN-Transformer</span>
+                        <span class="tech-tag">Edge-Aware Attention</span>
+                        <span class="tech-tag">ASPP</span>
+                        <span class="tech-tag">U-Net</span>
+                        <span class="tech-tag">Dataset BRISC 2025</span>
+                        <span class="tech-tag">Dice Score : 0.8734</span>
+                    </div>
+                    <a href="https://www.kaggle.com/code/sihambadii/notebook981a691f9e" class="project-link" target="_blank">
+                        📂 Voir le notebook Kaggle
+                    </a>
+                </div>
 
             </div>
         </section>
